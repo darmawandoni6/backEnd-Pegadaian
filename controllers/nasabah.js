@@ -16,6 +16,20 @@ exports.getNasabah = async (req, res) => {
   }
 };
 
+exports.getKTPNasabah = async (req, res) => {
+  try {
+    const data = await Nasabah.findOne({ where: { KTP: req.params.KTP } });
+    res.send({
+      data
+    });
+  } catch (error) {
+    console.log(error.message);
+    res.status(400).send({
+      msg: error.message
+    });
+  }
+};
+
 exports.getNasabahBrowse = async (req, res) => {
   try {
     const data = await Nasabah.findAll({
