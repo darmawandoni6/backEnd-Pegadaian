@@ -16,11 +16,10 @@
     "operatorsAliases": false
   },
   "production": {
-    "use_env_variable": "DATABASE_URL",
-    "dialect": "postgres",
-    "protocol": "postgres",
-    "dialectOptions": {
-      "ssl": true
-    }
+    "username": "lucstvmnmemoeb",
+    "password": "964b13949ce3e48c4ef9df9d38276c4d08dd51638c7d84d768031e01b3dae02f",
+    "database": "deg90394eki895",
+    "host": "ec2-54-247-78-30.eu-west-1.compute.amazonaws.com",
+    "dialect": "postgres"
   }
 }
