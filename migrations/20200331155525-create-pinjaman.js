@@ -8,6 +8,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      NO_PINJAMAN: {
+        type: Sequelize.STRING
+      },
       ID_NAS: {
         type: Sequelize.INTEGER,
         llowNull: false,
