@@ -35,7 +35,7 @@ exports.getKTPNasabah = async (req, res) => {
 exports.getNasabahBrowse = async (req, res) => {
   try {
     const data = await Nasabah.findAll({
-      where: { status: "NON AKTIF" },
+      where: { STATUS: "NON AKTIF" },
       order: [["id", "DESC"]],
     });
     res.send({
