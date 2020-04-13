@@ -15,7 +15,7 @@ exports.addPinjaman = async (req, res) => {
       BUNGA,
       TGL_PINJAM,
       TGL_KEMBALI,
-      TOT_PINJAMAN
+      TOT_PINJAMAN,
     } = req.body;
 
     const data = await Barang.create(ID_BARANG);
@@ -30,7 +30,7 @@ exports.addPinjaman = async (req, res) => {
         BUNGA,
         TGL_PINJAM,
         TGL_KEMBALI,
-        TOT_PINJAMAN
+        TOT_PINJAMAN,
       };
       const data2 = await Pinjaman.create(pinjaman);
       if (data2) {
@@ -39,12 +39,12 @@ exports.addPinjaman = async (req, res) => {
       }
     }
     res.send({
-      msg: true
+      msg: true,
     });
   } catch (error) {
     console.log(error.message);
     res.status(400).send({
-      msg: error.message
+      msg: error.message,
     });
   }
 };
@@ -55,30 +55,30 @@ exports.getPinjaman = async (req, res) => {
       include: [
         {
           model: Perpanjangan,
-          attributes: ["id", "TGL_KEMBALI"]
+          attributes: ["id", "TGL_KEMBALI"],
         },
         {
           model: Nasabah,
           attributes: ["NASABAH", "STATUS"],
-          where: { STATUS: "AKTIF" }
-        }
+          where: { STATUS: "AKTIF" },
+        },
       ],
       attributes: [
         "id",
         "NO_PINJAMAN",
         "TGL_PINJAM",
         "TOT_PINJAMAN",
-        "TGL_KEMBALI"
+        "TGL_KEMBALI",
       ],
-      order: [["id", "DESC"]]
+      order: [["id", "DESC"]],
     });
 
     res.send({
-      data
+      data,
     });
   } catch (error) {
     res.status(401).send({
-      msg: error.message
+      msg: error.message,
     });
   }
 };
